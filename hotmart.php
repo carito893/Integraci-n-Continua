@@ -13,5 +13,4 @@
         $producto->__SET('status', $_POST['status'] ? $_POST['status'] : 'approved');
         $setProducto->SetProducto($producto);
     
-
 ?>
