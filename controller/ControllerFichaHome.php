@@ -10,7 +10,6 @@
                 $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);  
                 $this->pdo->exec("set names utf8");
 
-
             } catch (Exception $e) {
                 die($e->getMessage());
             }
@@ -64,16 +63,14 @@
         {
             die($e->getMessage());
         }
-    }
-    
-    
+    }   
+  
        public function cambiarEstado($id){
 
         try {
 
             $tempEstado = $estado = 'completo';
-
-      
+ 
             $stm = $this->pdo->prepare("update hotmart set sync = ? where id = ?");
             
             $estado = 1;
@@ -91,12 +88,8 @@
         }
     }
     
-    
-
-
     public function eliminar($id){
             try {
-
        
                 $stm = $this->pdo->prepare("delete from hotmart WHERE id = ?");
     
