@@ -1,7 +1,5 @@
 <?php
 
-
-
     class ControllerHotmart{
 
         private $pdo;
@@ -11,7 +9,6 @@
                  $this->pdo = new PDO('mysql:host=localhost;dbname=camilo24_poli', 'camilo24_poli' , '_Poli@2018');
                 $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);  
                 $this->pdo->exec("set names utf8");
-
 
             } catch (Exception $e) {
                 die($e->getMessage());
@@ -36,8 +33,7 @@
                  $nombre = $i->__GET('nombre');
                  $correo = $i->__GET('correo');
                  $fecha = $i->__GET('fecha');
-                 $estado = $i->__GET('status');
-                 
+                 $estado = $i->__GET('status');  
                  
                  
             $stm->bindParam(1, $id);
@@ -56,6 +52,4 @@
         }
 
 }
-
-
 ?>
